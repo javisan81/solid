@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: src/main/java/org/example/interfaceSegregation/BudgetFilter.java
+  checksum: 6bac211fab946c33d82d2ae5d19fc7ebd64072f4ffe8cf341b83eade095d55c5
+version: ""
