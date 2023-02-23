@@ -1,4 +1,4 @@
-package org.example.singleResponsibilty;
+package org.example.singleResponsibiltyAndDependencyInversion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
