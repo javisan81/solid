@@ -19,12 +19,12 @@ public class SortByPopularityTest {
         SortByPopularity sortByPopularity = new SortByPopularity();
         assertEquals(
                 Arrays.asList(
-                        new Hotel(null, null, new BasicStaticInfo(75)),
-                        new Hotel(null, null, new BasicStaticInfo(50))
+                        new HotelForSorting(75),
+                        new HotelForSorting(50)
                 ),
                 sortByPopularity.sort(Arrays.asList(
-                                new Hotel(null, null, new BasicStaticInfo(50)),
-                                new Hotel(null, null, new BasicStaticInfo(75))
+                                new HotelForSorting(50),
+                                new HotelForSorting(75)
                         )
                 )
         );

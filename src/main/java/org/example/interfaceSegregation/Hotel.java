@@ -1,9 +1,10 @@
 package org.example.interfaceSegregation;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
-public class Hotel {
+public class Hotel implements FilterByPriceHotel, PopularHotel {
     private final String hotelId;
     private final List<MealPlan> mealPlans;
     private final BasicStaticInfo staticInfo;
@@ -13,13 +14,12 @@ public class Hotel {
         this.mealPlans = mealPlans;
         this.staticInfo = staticInfo;
     }
-
-    public BasicStaticInfo getStaticInfo() {
-        return staticInfo;
+    public boolean isPriceInBudget(BigDecimal minBudget, BigDecimal maxBudget){
+        return mealPlans.stream().anyMatch(m -> m.getPrice().compareTo(maxBudget) <= 0 && m.getPrice().compareTo(minBudget) >= 0);
     }
 
-    public List<MealPlan> getMealPlans() {
-        return mealPlans;
+    public int getPopularity(){
+        return staticInfo.getPopularity();
     }
 
     @Override

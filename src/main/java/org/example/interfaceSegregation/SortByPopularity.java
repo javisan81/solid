@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SortByPopularity{
-    public List<Hotel> sort(List<Hotel> hotels){
+    public List<PopularHotel> sort(List<PopularHotel> hotels){
         return hotels.stream()
-                .sorted((a,b) -> b.getStaticInfo().getPopularity() - a.getStaticInfo().getPopularity()).collect(Collectors.toList());
+                .sorted((a,b) -> b.getPopularity() - a.getPopularity()).collect(Collectors.toList());
     }
 }

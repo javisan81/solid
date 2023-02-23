@@ -12,10 +12,10 @@ public class BudgetFilter {
         this.maxBudget = maxBudget;
     }
 
-    public boolean passes(List<Hotel> hotels){
+    public boolean passes(List<FilterByPriceHotel> hotels){
         if(hotels.isEmpty())
             return true;
         return hotels.stream()
-                .anyMatch(h -> h.getMealPlans().stream().anyMatch(m -> m.getPrice().compareTo(maxBudget) <= 0 && m.getPrice().compareTo(minBudget) >= 0));
+                .anyMatch(h -> h.isPriceInBudget(minBudget, maxBudget));
     }
 }
